@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 //import Button from "react-bootstrap/Button";
 
-import { Button, Row, Col, Container } from "react-bootstrap";
+import { Button, Row, Col, Container, Table } from "react-bootstrap";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Button variant="primary">Gang</Button>
         </Col>
       </Row>
+
       <Row>
         <Col>
           <Row>
@@ -56,15 +57,59 @@ function App() {
           </Row>
         </Col>
       </Row>
+
       <Row>
         <Col>Wydarzenia</Col>
       </Row>
+
       <Row>
-        <Col>
+        <Col sm="5">
           <Row>Dostępny na rynku towar:</Row>
-          <Row>Tabela dostępnych</Row>
+          <Row>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>Nazwa</th>
+                  <th>Ilość</th>
+                  <th>Koszt jednostkowy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gras</td>
+                  <td>55</td>
+                  <td>83</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+              </tbody>
+            </Table>
+          </Row>
         </Col>
-        <Col>
+        <Col sm="2">
           <Row>
             <Button variant="primary" size="sm" block>
               Wyrzuć
@@ -98,7 +143,7 @@ function App() {
             </Button>
           </Row>
         </Col>
-        <Col>
+        <Col sm="5">
           <Row>
             <Col>Miesjce: 100/100</Col>
             <Col>
@@ -107,7 +152,49 @@ function App() {
               </Button>
             </Col>
           </Row>
-          <Row>Tabela ekwipunku</Row>
+          <Row>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>Nazwa</th>
+                  <th>Ilość</th>
+                  <th>Koszt jednostkowy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gras</td>
+                  <td>55</td>
+                  <td>83</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Grzybki</td>
+                  <td>44</td>
+                  <td>22</td>
+                </tr>
+              </tbody>
+            </Table>
+          </Row>
         </Col>
       </Row>
     </Container>
