@@ -1,10 +1,95 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-//import Button from "react-bootstrap/Button";
+import ItemsTable from "./components/ItemsTable";
 
+//import Button from "react-bootstrap/Button";
 import { Button, Row, Col, Container, Table } from "react-bootstrap";
 
 function App() {
+  const marketItems = [
+    {
+      name: "grzybki",
+      amount: 55,
+      price: 47,
+    },
+    {
+      name: "gras",
+      amount: 68,
+      price: 36,
+    },
+    {
+      name: "grzybki",
+      amount: 13,
+      price: 25,
+    },
+    {
+      name: "grzybki",
+      amount: 89,
+      price: 14,
+    },
+  ];
+
+  const inventoryItems = [
+    {
+      name: "grzybki",
+      amount: 89,
+      price: 14,
+    },
+    {
+      name: "grzybki",
+      amount: 89,
+      price: 14,
+    },
+    {
+      name: "grzybki",
+      amount: 89,
+      price: 14,
+    },
+    {
+      name: "grzybki",
+      amount: 89,
+      price: 14,
+    },
+    {
+      name: "grzybki",
+      amount: 89,
+      price: 14,
+    },
+    {
+      name: "grzybki",
+      amount: 89,
+      price: 14,
+    },
+  ];
+
+  const inventoryTools = [
+    {
+      name: "Kurtka",
+      amount: 1,
+      legal: true,
+    },
+    {
+      name: "Torba",
+      amount: 1,
+      legal: true,
+    },
+    {
+      name: "Aktówka",
+      amount: 1,
+      legal: true,
+    },
+    {
+      name: "Fiat 126p",
+      amount: 1,
+      legal: true,
+    },
+    {
+      name: "gnat",
+      amount: 1,
+      legal: false,
+    },
+  ];
+
   return (
     <Container>
       <Row>
@@ -66,47 +151,7 @@ function App() {
         <Col sm="5">
           <Row>Dostępny na rynku towar:</Row>
           <Row>
-            <Table striped bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th>Nazwa</th>
-                  <th>Ilość</th>
-                  <th>Koszt jednostkowy</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Gras</td>
-                  <td>55</td>
-                  <td>83</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-              </tbody>
-            </Table>
+            <ItemsTable items={marketItems} />
           </Row>
         </Col>
         <Col sm="2">
@@ -131,13 +176,11 @@ function App() {
             </Button>
           </Row>
           <Row>
-            {" "}
             <Button variant="primary" block>
               Szpital
             </Button>
           </Row>
           <Row>
-            {" "}
             <Button variant="primary" block>
               Finanse
             </Button>
@@ -153,47 +196,7 @@ function App() {
             </Col>
           </Row>
           <Row>
-            <Table striped bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th>Nazwa</th>
-                  <th>Ilość</th>
-                  <th>Koszt jednostkowy</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Gras</td>
-                  <td>55</td>
-                  <td>83</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>Grzybki</td>
-                  <td>44</td>
-                  <td>22</td>
-                </tr>
-              </tbody>
-            </Table>
+            <ItemsTable items={inventoryItems} />
           </Row>
         </Col>
       </Row>
