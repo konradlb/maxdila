@@ -205,3 +205,16 @@ function App() {
 }
 
 export default App;
+
+// prices = {
+//   "grass": (20, 29),
+//   "scun": (30, 44),
+//   "hash": (20, 29),
+//   "acid": (20, 29),
+//   "extasy": (15, 21),
+//   "speed": (28, 44),
+//   "heroine": (40, 59),
+//   "coca": (100, 149),
+//   "sugar": (40, 59),
+//   "mush": (15, 21),
+// }
