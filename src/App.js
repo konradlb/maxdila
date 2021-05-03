@@ -1,94 +1,14 @@
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import ItemsTable from "./components/ItemsTable";
+import { AppStateContext } from "./context/AppStateContext";
 
-//import Button from "react-bootstrap/Button";
-import { Button, Row, Col, Container, Table } from "react-bootstrap";
+import ItemsTable from "./components/ItemsTable/ItemsTable";
+
+import { Button, Row, Col, Container } from "react-bootstrap";
 
 function App() {
-  const marketItems = [
-    {
-      name: "grzybki",
-      amount: 55,
-      price: 47,
-    },
-    {
-      name: "gras",
-      amount: 68,
-      price: 36,
-    },
-    {
-      name: "grzybki",
-      amount: 13,
-      price: 25,
-    },
-    {
-      name: "grzybki",
-      amount: 89,
-      price: 14,
-    },
-  ];
-
-  const inventoryItems = [
-    {
-      name: "grzybki",
-      amount: 89,
-      price: 14,
-    },
-    {
-      name: "grzybki",
-      amount: 89,
-      price: 14,
-    },
-    {
-      name: "grzybki",
-      amount: 89,
-      price: 14,
-    },
-    {
-      name: "grzybki",
-      amount: 89,
-      price: 14,
-    },
-    {
-      name: "grzybki",
-      amount: 89,
-      price: 14,
-    },
-    {
-      name: "grzybki",
-      amount: 89,
-      price: 14,
-    },
-  ];
-
-  const inventoryTools = [
-    {
-      name: "Kurtka",
-      amount: 1,
-      legal: true,
-    },
-    {
-      name: "Torba",
-      amount: 1,
-      legal: true,
-    },
-    {
-      name: "Aktówka",
-      amount: 1,
-      legal: true,
-    },
-    {
-      name: "Fiat 126p",
-      amount: 1,
-      legal: true,
-    },
-    {
-      name: "gnat",
-      amount: 1,
-      legal: false,
-    },
-  ];
+  const appState = useContext(AppStateContext);
 
   return (
     <Container>
@@ -151,7 +71,7 @@ function App() {
         <Col sm="5">
           <Row>Dostępny na rynku towar:</Row>
           <Row>
-            <ItemsTable items={marketItems} />
+            <ItemsTable items={appState.marketItems} />
           </Row>
         </Col>
         <Col sm="2">
@@ -196,7 +116,7 @@ function App() {
             </Col>
           </Row>
           <Row>
-            <ItemsTable items={inventoryItems} />
+            <ItemsTable items={appState.inventoryItems} />
           </Row>
         </Col>
       </Row>
