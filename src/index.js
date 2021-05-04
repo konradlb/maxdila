@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { AppStateContext } from "./context/AppStateContext";
-import { appState } from "./context/AppState";
+import AppStateProvider from "./context/AppStateContext";
+// import { AppStateContext } from "./context/AppStateContext";
+// import { appState } from "./context/AppState";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppStateContext.Provider value={appState}>
+    <AppStateProvider>
       <App />
-    </AppStateContext.Provider>
+    </AppStateProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

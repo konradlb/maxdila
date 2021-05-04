@@ -1,12 +1,12 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-function ItemsTable({ items }) {
+function ItemsTable({ items, showTools }) {
   const rows = items.map((item) => (
     <tr key={item.id}>
       <td>{item.name}</td>
       <td>{item.amount}</td>
-      <td>{item.price}</td>
+      <td>{showTools ? (item.legal ? "tak" : "nie") : item.price}</td>
     </tr>
   ));
 
@@ -16,7 +16,7 @@ function ItemsTable({ items }) {
         <tr>
           <th>Nazwa</th>
           <th>Ilość</th>
-          <th>Koszt jednostkowy</th>
+          <th>{showTools ? "Legalny" : "Koszt jednostkowy"}</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>

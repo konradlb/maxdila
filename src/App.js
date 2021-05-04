@@ -112,13 +112,24 @@ function App() {
               Miesjce: {appState.stats.storage}/{appState.stats.storageMax}
             </Col>
             <Col>
-              <Button variant="primary" size="sm">
-                Sprzęt
+              <Button
+                onClick={appState.showTools.onClick}
+                variant="primary"
+                size="sm"
+              >
+                {appState.showTools.value ? "Towar" : "Sprzęt"}
               </Button>
             </Col>
           </Row>
           <Row>
-            <ItemsTable items={appState.inventoryItems} />
+            <ItemsTable
+              items={
+                appState.showTools.value
+                  ? appState.inventoryTools
+                  : appState.inventoryItems
+              }
+              showTools={appState.showTools.value}
+            />
           </Row>
         </Col>
       </Row>
