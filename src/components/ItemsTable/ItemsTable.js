@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 function ItemsTable({ items }) {
   const rows = items.map((item) => (
-    <tr>
+    <tr key={item.id}>
       <td>{item.name}</td>
       <td>{item.amount}</td>
       <td>{item.price}</td>

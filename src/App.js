@@ -23,14 +23,14 @@ function App() {
       <Row>
         <Col>
           <Row>
-            <Col>Kasa:198</Col>
-            <Col>Depozyt:0</Col>
+            <Col>Kasa:{appState.stats.money}</Col>
+            <Col>Depozyt:{appState.stats.deposit}</Col>
           </Row>
           <Row>
-            <Col>Prestiż: 0</Col>
-            <Col>Dług:</Col>
+            <Col>Prestiż: {appState.stats.prestige}</Col>
+            <Col>Dług:{appState.stats.debt}</Col>
           </Row>
-          <Row>Kondycja: 100%</Row>
+          <Row>Kondycja: {appState.stats.condition}%</Row>
         </Col>
         <Col>
           <Row>
@@ -108,7 +108,9 @@ function App() {
         </Col>
         <Col sm="5">
           <Row>
-            <Col>Miesjce: 100/100</Col>
+            <Col>
+              Miesjce: {appState.stats.storage}/{appState.stats.storageMax}
+            </Col>
             <Col>
               <Button variant="primary" size="sm">
                 Sprzęt
