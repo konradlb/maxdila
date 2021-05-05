@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { AppStateContext } from "./context/AppStateContext";
 
 import ItemsTable from "./components/ItemsTable/ItemsTable";
+import Towns from "./components/Towns/Towns";
+import Events from "./components/Events/Events";
 
 import { Button, Row, Col, Container } from "react-bootstrap";
 
@@ -33,38 +35,14 @@ function App() {
           <Row>Kondycja: {appState.stats.condition}%</Row>
         </Col>
         <Col>
-          <Row>
-            <Col>Wybierz miasto do którego pojedziesz</Col>
-          </Row>
-          <Row>
-            <Button variant="primary" size="lg">
-              Katowice
-            </Button>
-            <Button variant="primary" size="lg">
-              Tychy
-            </Button>
-          </Row>
-          <Row>
-            <Button variant="primary" size="lg">
-              Oświęcim
-            </Button>
-            <Button variant="primary" size="lg">
-              Murcki
-            </Button>
-          </Row>
-          <Row>
-            <Button variant="primary" size="lg">
-              Zabrze
-            </Button>
-            <Button variant="primary" size="lg">
-              Gliwice
-            </Button>
-          </Row>
+          <Towns travel={appState.travel.onClick} />
         </Col>
       </Row>
 
       <Row>
-        <Col>Wydarzenia</Col>
+        <Col>
+          <Events />
+        </Col>
       </Row>
 
       <Row>

@@ -4,6 +4,8 @@ export const AppStateContext = createContext();
 
 const AppStateProvider = ({ children }) => {
   const [showTools, setShowTools] = useState(false);
+  const [day, setDay] = useState(1);
+  const [eventsMessages, setEventsMessages] = useState([]);
 
   const value = {
     stats: {
@@ -15,12 +17,31 @@ const AppStateProvider = ({ children }) => {
       storage: 0,
       storageMax: 1000,
       currentTown: "Katowice",
-      day: 1,
+      day: day,
     },
 
     showTools: {
       value: showTools,
       onClick: () => setShowTools(!showTools),
+    },
+
+    travel: {
+      onClick: (event) => {
+        console.log(event.nativeEvent.srcElement.childNodes[0].data);
+        setDay(day + 1);
+
+        setEventsMessages(
+          eventsMessages.concat(
+            `Nastał nowy ${day + 1} dzień Twojej nędznej egzystencji`
+          )
+        );
+
+        console.log(eventsMessages);
+      },
+    },
+
+    events: {
+      eventsMessages: eventsMessages,
     },
 
     marketItems: [
