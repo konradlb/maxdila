@@ -6,6 +6,14 @@ const AppStateProvider = ({ children }) => {
   const [showTools, setShowTools] = useState(false);
   const [day, setDay] = useState(1);
   const [eventsMessages, setEventsMessages] = useState([]);
+  const [currentTown, setCurrentTown] = useState("Katowice");
+  const [storage, setStorage] = useState(0);
+
+  const calculateStorage = () => {
+    let sum = 0;
+    value.inventoryItems.forEach((item, i) => (sum += item.amount));
+    setStorage(sum);
+  };
 
   const value = {
     stats: {
@@ -14,9 +22,9 @@ const AppStateProvider = ({ children }) => {
       prestige: 0,
       debt: 1000,
       condition: 100,
-      storage: 0,
+      storage: storage,
       storageMax: 1000,
-      currentTown: "Katowice",
+      currentTown: currentTown,
       day: day,
     },
 
@@ -27,12 +35,15 @@ const AppStateProvider = ({ children }) => {
 
     travel: {
       onClick: (event) => {
-        console.log(event.nativeEvent.srcElement.childNodes[0].data);
+        setCurrentTown(event.nativeEvent.srcElement.childNodes[0].data);
         setDay(day + 1);
+        calculateStorage();
 
         setEventsMessages(
           eventsMessages.concat(
-            `Nastał nowy ${day + 1} dzień Twojej nędznej egzystencji`
+            `Nastał nowy ${
+              day + 1
+            } dzień Twojej nędznej egzystencji w ${currentTown}`
           )
         );
       },
