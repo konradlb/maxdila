@@ -35,8 +35,6 @@ const AppStateProvider = ({ children }) => {
             `Nastał nowy ${day + 1} dzień Twojej nędznej egzystencji`
           )
         );
-
-        console.log(eventsMessages);
       },
     },
 

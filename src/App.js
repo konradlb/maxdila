@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { AppStateContext } from "./context/AppStateContext";
 
-import ItemsTable from "./components/ItemsTable/ItemsTable";
-import Towns from "./components/Towns/Towns";
-import Events from "./components/Events/Events";
+import ItemsTable from "./components/ItemsTable/ItemsTable.jsx";
+import Towns from "./components/Towns/Towns.jsx";
+import Events from "./components/Events/Events.jsx";
 
 import { Button, Row, Col, Container } from "react-bootstrap";
 
