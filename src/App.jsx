@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import { AppStateContext } from "./context/AppStateContext";
+
+import { Button, Row, Col, Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import ItemsTable from "./components/ItemsTable/ItemsTable.jsx";
 import Towns from "./components/Towns/Towns.jsx";
 import Events from "./components/Events/Events.jsx";
-
-import { Button, Row, Col, Container } from "react-bootstrap";
 
 function App() {
   const appState = useContext(AppStateContext);
@@ -116,16 +115,3 @@ function App() {
 }
 
 export default App;
-
-// prices = {
-//   "grass": (20, 29),
-//   "scun": (30, 44),
-//   "hash": (20, 29),
-//   "acid": (20, 29),
-//   "extasy": (15, 21),
-//   "speed": (28, 44),
-//   "heroine": (40, 59),
-//   "coca": (100, 149),
-//   "sugar": (40, 59),
-//   "mush": (15, 21),
-// }

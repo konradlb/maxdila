@@ -53,130 +53,187 @@ const AppStateProvider = ({ children }) => {
       eventsMessages: eventsMessages,
     },
 
+    namesItems: [
+      "grass",
+      "scun",
+      "hash",
+      "acid",
+      "extasy",
+      "speed",
+      "heroine",
+      "coca",
+      "sugar",
+      "mush",
+    ],
+
+    namesTools: [
+      "Kurtka",
+      "Torba",
+      "Aktówka",
+      "Fiat 126p",
+      "Gnat",
+      "Pestki do gnata",
+      "Kałach",
+      "Magazynek",
+      "Granat",
+      "Shunikan?",
+    ],
+
     marketItems: [
       {
-        id: 1,
-        name: "grzybki",
+        id: 0,
         amount: 555,
         price: 47,
       },
       {
-        id: 2,
-        name: "gras",
+        id: 1,
         amount: 68,
         price: 36,
       },
       {
-        id: 3,
-        name: "grzybki",
+        id: 2,
         amount: 13,
         price: 25,
       },
       {
-        id: 4,
-        name: "grzybki",
+        id: 3,
         amount: 89,
+        price: 14,
+      },
+      {
+        id: 4,
+        amount: 89,
+        price: 14,
+      },
+      {
+        id: 5,
+        amount: 89,
+        price: 14,
+      },
+      {
+        id: 6,
+        amount: 0,
+        price: 14,
+      },
+      {
+        id: 7,
+        amount: 89,
+        price: 14,
+      },
+      {
+        id: 8,
+        amount: 1,
+        price: 14,
+      },
+      {
+        id: 9,
+        amount: 0,
         price: 14,
       },
     ],
 
     inventoryItems: [
       {
+        id: 0,
+        amount: 555,
+        price: 47,
+      },
+      {
         id: 1,
-        name: "grzybki",
-        amount: 89,
-        price: 14,
+        amount: 68,
+        price: 36,
       },
       {
         id: 2,
-        name: "grzybki",
-        amount: 89,
-        price: 14,
+        amount: 13,
+        price: 25,
       },
       {
         id: 3,
-        name: "grzybki",
         amount: 89,
         price: 14,
       },
       {
         id: 4,
-        name: "grzybki",
         amount: 89,
         price: 14,
       },
       {
         id: 5,
-        name: "grzybki",
         amount: 89,
         price: 14,
       },
       {
         id: 6,
-        name: "grzybki",
+        amount: 2,
+        price: 14,
+      },
+      {
+        id: 7,
+
         amount: 89,
+        price: 14,
+      },
+      {
+        id: 8,
+        amount: 1,
+        price: 14,
+      },
+      {
+        id: 9,
+        amount: 1,
         price: 14,
       },
     ],
 
     inventoryTools: [
       {
+        id: 0,
+        amount: 1,
+        legal: true,
+      },
+      {
         id: 1,
-        name: "Kurtka",
         amount: 1,
         legal: true,
       },
       {
         id: 2,
-        name: "Torba",
         amount: 1,
         legal: true,
       },
       {
         id: 3,
-        name: "Aktówka",
         amount: 1,
         legal: true,
       },
       {
         id: 4,
-        name: "Fiat 126p",
         amount: 1,
-        legal: true,
+        legal: false,
       },
       {
         id: 5,
-        name: "Gnat",
         amount: 1,
         legal: false,
       },
       {
         id: 6,
-        name: "Pestki do gnata",
         amount: 1,
         legal: false,
       },
       {
         id: 7,
-        name: "Kałach",
         amount: 1,
         legal: false,
       },
       {
         id: 8,
-        name: "Magazynek",
         amount: 1,
         legal: false,
       },
       {
         id: 9,
-        name: "Granat",
-        amount: 1,
-        legal: false,
-      },
-      {
-        id: 10,
-        name: "Shunikan?",
         amount: 1,
         legal: false,
       },
@@ -191,3 +248,29 @@ const AppStateProvider = ({ children }) => {
 };
 
 export default AppStateProvider;
+
+// prices = {
+//   "grass": (20, 29),
+//   "scun": (30, 44),
+//   "hash": (20, 29),
+//   "acid": (20, 29),
+//   "extasy": (15, 21),
+//   "speed": (28, 44),
+//   "heroine": (40, 59),
+//   "coca": (100, 149),
+//   "sugar": (40, 59),
+//   "mush": (15, 21),
+// }
+
+// names: [
+//   { id: 1, name: "grass" },
+//   { id: 2, name: "scun" },
+//   { id: 3, name: "hash" },
+//   { id: 4, name: "acid" },
+//   { id: 5, name: "extasy" },
+//   { id: 6, name: "speed" },
+//   { id: 7, name: "heroine" },
+//   { id: 8, name: "coca" },
+//   { id: 9, name: "sugar" },
+//   { id: 10, name: "mush" },
+// ],
