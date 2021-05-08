@@ -3,13 +3,18 @@ import { AppStateContext } from "../../context/AppStateContext";
 
 import { Table } from "react-bootstrap";
 
-function ItemsTable({ items, showTools }) {
+function ItemsTable({ items, showTools, isMarket }) {
   const appState = useContext(AppStateContext);
 
   const rows = items.map(
     (item) =>
       item.amount > 0 && (
-        <tr key={item.id}>
+        <tr
+          key={item.id}
+          onClick={() =>
+            appState.items.setActiveItem(item.id, isMarket, showTools || false)
+          }
+        >
           <td>
             {showTools
               ? appState.namesTools[item.id]

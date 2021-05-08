@@ -48,7 +48,7 @@ function App() {
         <Col sm="5">
           <Row>Dostępny na rynku towar:</Row>
           <Row>
-            <ItemsTable items={appState.marketItems} />
+            <ItemsTable items={appState.marketItems} isMarket={true} />
           </Row>
         </Col>
         <Col sm="2">
@@ -106,6 +106,7 @@ function App() {
                   : appState.inventoryItems
               }
               showTools={appState.showTools.value}
+              isMarket={false}
             />
           </Row>
         </Col>
