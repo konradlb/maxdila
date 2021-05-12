@@ -1,18 +1,23 @@
 import React, { useContext } from "react";
 import { AppStateContext } from "../../context/AppStateContext";
 
-import { Table } from "react-bootstrap";
+import { Table, Jumbotron } from "react-bootstrap";
 
-function ItemsTable({ items, showTools, isMarket }) {
+function ItemsTable({ items, activeItem, showTools, isMarket }) {
   const appState = useContext(AppStateContext);
 
   const rows = items.map(
     (item) =>
       item.amount > 0 && (
         <tr
+          className={activeItem === item.id ? "table-primary" : ""}
           key={item.id}
           onClick={() =>
-            appState.items.setActiveItem(item.id, isMarket, showTools || false)
+            appState.items.setActiveItem(
+              item.id,
+              isMarket || false,
+              showTools || false
+            )
           }
         >
           <td>
@@ -27,16 +32,19 @@ function ItemsTable({ items, showTools, isMarket }) {
   );
 
   return (
-    <Table striped bordered hover size="sm">
-      <thead>
-        <tr>
-          <th>Nazwa</th>
-          <th>Ilość</th>
-          <th>{showTools ? "Legalny" : "Koszt jednostkowy"}</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </Table>
+    <Jumbotron>
+      <Table striped bordered hover>
+        <caption>List of users</caption>
+        <thead>
+          <tr>
+            <th>Nazwa</th>
+            <th>Ilość</th>
+            <th>{showTools ? "Legalny" : "Koszt jednostkowy"}</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </Table>
+    </Jumbotron>
   );
 }
 

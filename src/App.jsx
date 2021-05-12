@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppStateContext } from "./context/AppStateContext";
 
-import { Button, Row, Col, Container } from "react-bootstrap";
+import { Button, Row, Col, Container, Jumbotron } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import ItemsTable from "./components/ItemsTable/ItemsTable.jsx";
@@ -20,23 +20,24 @@ function App() {
           <Button variant="primary">Gang</Button>
         </Col>
       </Row>
-
-      <Row>
-        <Col>
-          <Row>
-            <Col>Kasa:{appState.stats.money}</Col>
-            <Col>Depozyt:{appState.stats.deposit}</Col>
-          </Row>
-          <Row>
-            <Col>Prestiż: {appState.stats.prestige}</Col>
-            <Col>Dług:{appState.stats.debt}</Col>
-          </Row>
-          <Row>Kondycja: {appState.stats.condition}%</Row>
-        </Col>
-        <Col>
-          <Towns travel={appState.travel.onClick} />
-        </Col>
-      </Row>
+      <Jumbotron>
+        <Row>
+          <Col>
+            <Row>
+              <Col>Kasa:{appState.stats.money}</Col>
+              <Col>Depozyt:{appState.stats.deposit}</Col>
+            </Row>
+            <Row>
+              <Col>Prestiż: {appState.stats.prestige}</Col>
+              <Col>Dług:{appState.stats.debt}</Col>
+            </Row>
+            <Row>Kondycja: {appState.stats.condition}%</Row>
+          </Col>
+          <Col>
+            <Towns travel={appState.travel.onClick} />
+          </Col>
+        </Row>
+      </Jumbotron>
 
       <Row>
         <Col>
@@ -48,7 +49,11 @@ function App() {
         <Col sm="5">
           <Row>Dostępny na rynku towar:</Row>
           <Row>
-            <ItemsTable items={appState.marketItems} isMarket={true} />
+            <ItemsTable
+              items={appState.marketItems}
+              activeItem={appState.items.activeMarketItem}
+              isMarket={true}
+            />
           </Row>
         </Col>
         <Col sm="2">
@@ -105,8 +110,12 @@ function App() {
                   ? appState.inventoryTools
                   : appState.inventoryItems
               }
+              activeItem={
+                appState.showTools.value
+                  ? appState.items.activeInventoryTool
+                  : appState.items.activeInventoryItem
+              }
               showTools={appState.showTools.value}
-              isMarket={false}
             />
           </Row>
         </Col>
