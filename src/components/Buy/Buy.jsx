@@ -18,11 +18,15 @@ function Buy() {
 
       <Modal show={showModal} onHide={handleClose} animation={false} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Kup towar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {appState.items.activeMarketItem
-            ? `Kupujesz ${appState.namesItems[appState.items.activeMarketItem]}`
+          {appState.items.selectedMarketItem
+            ? `Kupujesz ${
+                appState.namesItems[appState.items.selectedMarketItem]
+              }. Na lokalnym rynku dostępne jest ${
+                appState.marketItems[appState.items.selectedMarketItem].amount
+              } sztuk.`
             : `zaznacz towar który chcesz kupić`}
         </Modal.Body>
         <Modal.Footer>
@@ -31,8 +35,10 @@ function Buy() {
           </Button>
 
           <Button
-            variant={appState.items.activeMarketItem ? "primary" : "secondary"}
-            onClick={appState.items.activeMarketItem && handleClose}
+            variant={
+              appState.items.selectedMarketItem ? "primary" : "secondary"
+            }
+            onClick={appState.items.selectedMarketItem && handleClose}
           >
             Kup towar
           </Button>

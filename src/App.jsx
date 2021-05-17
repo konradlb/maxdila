@@ -52,7 +52,7 @@ function App() {
           <Row>
             <ItemsTable
               items={appState.marketItems}
-              activeItem={appState.items.activeMarketItem}
+              activeItem={appState.items.selectedMarketItem}
               isMarket={true}
             />
           </Row>
@@ -111,8 +111,8 @@ function App() {
               }
               activeItem={
                 appState.showTools.value
-                  ? appState.items.activeInventoryTool
-                  : appState.items.activeInventoryItem
+                  ? appState.items.selectedInventoryTool
+                  : appState.items.selectedInventoryItem
               }
               showTools={appState.showTools.value}
             />
