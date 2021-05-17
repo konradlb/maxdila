@@ -4,9 +4,10 @@ import { AppStateContext } from "./context/AppStateContext";
 import { Button, Row, Col, Container, Jumbotron } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import ItemsTable from "./components/ItemsTable/ItemsTable.jsx";
-import Towns from "./components/Towns/Towns.jsx";
-import Events from "./components/Events/Events.jsx";
+import ItemsTable from "./components/ItemsTable/ItemsTable";
+import Towns from "./components/Towns/Towns";
+import Events from "./components/Events/Events";
+import Buy from "./components/Buy/Buy";
 
 function App() {
   const appState = useContext(AppStateContext);
@@ -63,9 +64,7 @@ function App() {
             </Button>
           </Row>
           <Row>
-            <Button variant="primary" size="lg" block>
-              Kupuj
-            </Button>
+            <Buy />
           </Row>
           <Row>
             <Button variant="primary" size="lg" block>
@@ -91,7 +90,7 @@ function App() {
         <Col sm="5">
           <Row>
             <Col>
-              Miesjce: {appState.stats.storage}/{appState.stats.storageMax}
+              Miejsce: {appState.stats.storage}/{appState.stats.storageMax}
             </Col>
             <Col>
               <Button
