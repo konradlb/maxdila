@@ -8,9 +8,9 @@ const AppStateProvider = ({ children }) => {
   const [eventsMessages, setEventsMessages] = useState([]);
   const [currentTown, setCurrentTown] = useState("Katowice");
   const [storage, setStorage] = useState(0);
-  const [selectedMarketItem, setselectedMarketItem] = useState(null);
-  const [selectedInventoryItem, setselectedInventoryItem] = useState(null);
-  const [selectedInventoryTool, setselectedInventoryTool] = useState(null);
+  const [selectedMarketItem, setSelectedMarketItem] = useState(null);
+  const [selectedInventoryItem, setSelectedInventoryItem] = useState(null);
+  const [selectedInventoryTool, setSelectedInventoryTool] = useState(null);
 
   const calculateStorage = () => {
     let sum = 0;
@@ -58,9 +58,9 @@ const AppStateProvider = ({ children }) => {
 
     items: {
       setActiveItem: (id, isMarket, showTools) => {
-        isMarket && setselectedMarketItem(id);
-        !isMarket & !showTools && setselectedInventoryItem(id);
-        !isMarket & showTools && setselectedInventoryTool(id);
+        isMarket && setSelectedMarketItem(id);
+        !isMarket & !showTools && setSelectedInventoryItem(id);
+        !isMarket & showTools && setSelectedInventoryTool(id);
       },
       selectedMarketItem: selectedMarketItem,
       selectedInventoryItem: selectedInventoryItem,
