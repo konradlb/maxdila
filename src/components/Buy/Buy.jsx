@@ -96,7 +96,7 @@ function Buy() {
         {modalBody}
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Anluluj
+            {appState.items.selectedMarketItem !== null ? "Anuluj" : "Zamknij"}
           </Button>
           {appState.items.selectedMarketItem !== null && (
             <Button variant="primary" onClick={handleBuy}>
