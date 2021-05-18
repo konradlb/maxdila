@@ -5,6 +5,7 @@ export const AppStateContext = createContext();
 const AppStateProvider = ({ children }) => {
   const [showTools, setShowTools] = useState(false);
   const [day, setDay] = useState(1);
+  const [money, setMoney] = useState(1000);
   const [eventsMessages, setEventsMessages] = useState([]);
   const [currentTown, setCurrentTown] = useState("Katowice");
   const [storage, setStorage] = useState(0);
@@ -20,7 +21,7 @@ const AppStateProvider = ({ children }) => {
 
   const value = {
     stats: {
-      money: 1000,
+      money: money,
       deposit: 0,
       prestige: 0,
       debt: 1000,
@@ -62,6 +63,13 @@ const AppStateProvider = ({ children }) => {
         !isMarket & !showTools && setSelectedInventoryItem(id);
         !isMarket & showTools && setSelectedInventoryTool(id);
       },
+      buyItems: (id, quantity) => {
+        setMoney(money - quantity * 55);
+        console.log("id:" + id + "quantity: " + quantity);
+        // this.marketItems[id].amount -= quantity;
+        // console.log("amount: " + this.marketItems[id].amount);
+      },
+
       selectedMarketItem: selectedMarketItem,
       selectedInventoryItem: selectedInventoryItem,
       selectedInventoryTool: selectedInventoryTool,

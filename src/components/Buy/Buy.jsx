@@ -14,6 +14,11 @@ function Buy() {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => setShowModal(false);
+  const handleBuy = () => {
+    setShowModal(false);
+    appState.items.buyItems(appState.items.selectedMarketItem, rangeValue);
+  };
+
   const handleShow = () => {
     setShowModal(true);
     setRangeValue(Math.ceil(amount / 2));
@@ -40,14 +45,23 @@ function Buy() {
                 />
               </Col>
               <Col xs="2">
-                <Form.Control value={rangeValue} />
+                <Form.Control
+                  type="number"
+                  value={rangeValue}
+                  max={amount}
+                  onChange={(e) =>
+                    e.target.value > amount
+                      ? setRangeValue(amount)
+                      : setRangeValue(e.target.value)
+                  } //jeżeli wartość e.target.value jest większa od dostępnej ilości to ustaw dostępną ilość
+                />
               </Col>
               <Col xs="1">
                 <Form.Label>Za</Form.Label>
               </Col>
               <Col xs="2">
                 <Form.Control
-                  value={
+                  defaultValue={
                     rangeValue *
                     appState.marketItems[appState.items.selectedMarketItem]
                       .price
@@ -85,7 +99,7 @@ function Buy() {
             Anluluj
           </Button>
           {appState.items.selectedMarketItem !== null && (
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={handleBuy}>
               Kup towar
             </Button>
           )}
