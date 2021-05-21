@@ -20,17 +20,17 @@ function Sell() {
 
   const handleShowModal = () => {
     setShowModal(true);
+    setRangeValue(Math.ceil(amount / 2));
   };
 
   const modalBody = (
     <Modal.Body>
       {appState.items.selectedInventoryItem != null ? (
         <>
-          Sprzedajesz{" "}
-          {appState.namesItems[appState.items.selectedInventoryItem]}. Przy
-          sobie masz do sprzedania{" "}
+          Przy sobie masz do sprzedania{" "}
           {appState.inventoryItems[appState.items.selectedInventoryItem].amount}{" "}
-          sztuk.
+          sztuk. Cena na czarnym rynku to:{" "}
+          {appState.marketItems[appState.items.selectedInventoryItem].price} zł.
           <Form>
             <Form.Row>
               <Col xs="7">
@@ -62,7 +62,7 @@ function Sell() {
                 <Form.Control
                   defaultValue={
                     rangeValue *
-                    appState.marketItems[appState.items.selectedMarketItem]
+                    appState.marketItems[appState.items.selectedInventoryItem]
                       .price
                   }
                 />
@@ -90,7 +90,10 @@ function Sell() {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>Sprzedaj towar</Modal.Title>
+          <Modal.Title>
+            Sprzedajesz{" "}
+            {appState.namesItems[appState.items.selectedInventoryItem]}
+          </Modal.Title>
         </Modal.Header>
         {modalBody}
         <Modal.Footer>

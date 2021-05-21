@@ -28,10 +28,9 @@ function Buy() {
     <Modal.Body>
       {appState.items.selectedMarketItem != null ? (
         <>
-          Kupujesz {appState.namesItems[appState.items.selectedMarketItem]}. Na
-          lokalnym rynku dostępne jest{" "}
-          {appState.marketItems[appState.items.selectedMarketItem].amount}{" "}
-          sztuk.
+          Na lokalnym rynku dostępne jest{" "}
+          {appState.marketItems[appState.items.selectedMarketItem].amount} sztuk
+          po {appState.marketItems[appState.items.selectedMarketItem].price} zł.
           <Form>
             <Form.Row>
               <Col xs="7">
@@ -91,7 +90,9 @@ function Buy() {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>Kup towar</Modal.Title>
+          <Modal.Title>
+            Kupujesz {appState.namesItems[appState.items.selectedMarketItem]}
+          </Modal.Title>
         </Modal.Header>
         {modalBody}
         <Modal.Footer>
