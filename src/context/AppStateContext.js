@@ -192,7 +192,6 @@ const AppStateProvider = ({ children }) => {
       },
       {
         id: 7,
-
         amount: 89,
         price: 14,
       },

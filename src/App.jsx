@@ -8,6 +8,7 @@ import ItemsTable from "./components/ItemsTable/ItemsTable";
 import Towns from "./components/Towns/Towns";
 import Events from "./components/Events/Events";
 import Buy from "./components/Buy/Buy";
+import Sell from "./components/Sell/Sell";
 
 function App() {
   const appState = useContext(AppStateContext);
@@ -67,9 +68,7 @@ function App() {
             <Buy />
           </Row>
           <Row>
-            <Button variant="primary" size="lg" block>
-              Sprzedaj
-            </Button>
+            <Sell />
           </Row>
           <Row>
             <Button variant="primary" block>
