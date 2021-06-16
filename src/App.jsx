@@ -9,6 +9,7 @@ import Towns from "./components/Towns/Towns";
 import Events from "./components/Events/Events";
 import Buy from "./components/Buy/Buy";
 import Sell from "./components/Sell/Sell";
+import Finances from "./components/Finances/Finances";
 
 function App() {
   const appState = useContext(AppStateContext);
@@ -81,9 +82,7 @@ function App() {
             </Button>
           </Row>
           <Row>
-            <Button variant="primary" block>
-              Finanse
-            </Button>
+            <Finances />
           </Row>
         </Col>
         <Col sm="5">
